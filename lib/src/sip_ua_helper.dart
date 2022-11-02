@@ -112,6 +112,7 @@ class SIPUAHelper extends EventManager {
     _settings.register_extra_contact_uri_params =
         uaSettings.registerParams.extraContactUriParams;
     _settings.dtmf_mode = uaSettings.dtmfMode;
+    _settings.session_timers = uaSettings.sessionTimers;
 
     try {
       _ua = UA(_settings);
@@ -625,6 +626,9 @@ class UaSettings {
   String password;
   String ha1;
   String displayName;
+
+  /// Session Timers
+  bool sessionTimers = true;
 
   /// DTMF mode, in band (rfc2833) or out of band (sip info)
   DtmfMode dtmfMode = DtmfMode.INFO;
