@@ -321,6 +321,7 @@ class RTCSession extends EventManager implements Owner {
     _id = _request.call_id + _from_tag;
 
     // Create a RTCPeerConnection instance.
+    pcConfig['enableCpuOveruseDetection'] = true;
     await _createRTCConnection(pcConfig, rtcConstraints);
 
     // Set internal properties.
